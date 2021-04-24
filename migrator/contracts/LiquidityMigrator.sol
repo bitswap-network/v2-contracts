@@ -12,7 +12,7 @@ contract LiquidityMigrator {
 	IUniswapV2Pair public pairFork;
 	BonusToken public bonusToken;
 	address public admin;
-	mapping(address => uint256) public unclaimedBalances;
+	mapping(address => uint) public unclaimedBalances;
 	bool public migrationDone;
 
 	constructor(

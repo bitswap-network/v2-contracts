@@ -5707,6 +5707,44 @@
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {
+        "0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "pair",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "name": "PairCreated",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x973eb7F4e69311789fcF1B24Ba729C79CC56f242",
+      "transactionHash": "0xefc2a23beab0df9079953b6fbced3b92637cb7fcc7ee5dc62ef1316e59017f73"
+    },
     "1618854751284": {
       "events": {
         "0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9": {
@@ -5744,10 +5782,48 @@
       "links": {},
       "address": "0xfD84FCA12eb18Cc2aD0069709fB59234C666B896",
       "transactionHash": "0xaa4db5d14536b6ce6b6fac6d43b2f4b44d71fa4ee7213497a3f8010c7a5fbde7"
+    },
+    "1619226674767": {
+      "events": {
+        "0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "pair",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "name": "PairCreated",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x5CEA060Afbfb0eed289af0be6883ed85c1CCE1f5",
+      "transactionHash": "0x8d2379aedde1602c321dea50dacbc4418aeca809552d4a7b9280b05cc02c7bde"
     }
   },
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-04-19T18:01:50.723Z",
+  "updatedAt": "2021-04-24T01:11:24.007Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
