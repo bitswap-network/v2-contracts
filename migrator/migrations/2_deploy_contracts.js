@@ -2,17 +2,19 @@ const BonusToken = artifacts.require("BonusToken.sol");
 const LiquidityMigrator = artifacts.require("LiquidityMigrator.sol");
 
 module.exports = async function (deployer) {
-	//await deployer.deploy(BonusToken);
-	//const bonusToken = await BonusToken.deployed();
+	
+  await deployer.deploy(BonusToken);
+	const bonusToken = await BonusToken.deployed(account, minter);
   
-  //get the ropsten addr from uniswap
+  //get the kovan addr from uniswap
 	const routerAddress = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D';
   //pair address from uniswap
-	const pairAddress = '0x38E12fDd8DC51e48830863151e1Afa7799e6fE97';
+	const pairAddress = '0x9456ad8eed93c2a60c3bc534960cf2da00dfb157';
   //router fork address from local deployment
-	const routerForkAddress = '0x4b6483AFA39458E3bdC70E055BEDdbb8c5d5D12c';
+	const routerForkAddress = '0x4094E0A49b18a914a2e44a0967121D4789EAaeD4';
   //need a deployment of the forked pair address
-	const pairForkAddress = '';
+	const pairForkAddress = '0x9456ad8eed93c2a60c3bc534960cf2da00dfb157';
+  const bonusTokenAddress = "0x79983be9B685152176442fc4277c7a949dc110ab";
 
 	await deployer.deploy(
  		LiquidityMigrator,
@@ -20,7 +22,7 @@ module.exports = async function (deployer) {
     	pairAddress,
     	routerForkAddress,
     	pairForkAddress,
-    	pairForkAddress,
+    	bonusTokenAddress,
   	);
   	
   	const liquidityMigrator = await LiquidityMigrator.deployed();

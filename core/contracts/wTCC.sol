@@ -1,13 +1,13 @@
 pragma solidity =0.5.16;
 
-import 'https://github.com/Uniswap/uniswap-v2-core/blob/master/contracts/interfaces/IUniswapV2ERC20.sol';
-import 'Safemath.sol';
+import './interfaces/IUniswapV2ERC20.sol';
+import './libraries/SafeMath.sol';
 
-contract BitswapV2ERC20 is IUniswapV2ERC20 {
+contract UniswapV2ERC20 is IUniswapV2ERC20 {
     using SafeMath for uint;
 
     string public constant name = 'BitSwapV2';
-    string public constant symbol = 'BITS';
+    string public constant symbol = 'BitSwapV2';
     uint8 public constant decimals = 18;
     uint  public totalSupply;
     mapping(address => uint) public balanceOf;
@@ -37,7 +37,7 @@ contract BitswapV2ERC20 is IUniswapV2ERC20 {
         );
     }
 
-    function _mint(address to, uint value) public {
+    function _mint(address to, uint value) internal {
         totalSupply = totalSupply.add(value);
         balanceOf[to] = balanceOf[to].add(value);
         emit Transfer(address(0), to, value);
@@ -79,7 +79,7 @@ contract BitswapV2ERC20 is IUniswapV2ERC20 {
     }
 
     function permit(address owner, address spender, uint value, uint deadline, uint8 v, bytes32 r, bytes32 s) external {
-        require(deadline >= block.timestamp, 'BitswapV2: EXPIRED');
+        require(deadline >= block.timestamp, 'UniswapV2: EXPIRED');
         bytes32 digest = keccak256(
             abi.encodePacked(
                 '\x19\x01',
@@ -88,7 +88,7 @@ contract BitswapV2ERC20 is IUniswapV2ERC20 {
             )
         );
         address recoveredAddress = ecrecover(digest, v, r, s);
-        require(recoveredAddress != address(0) && recoveredAddress == owner, 'BitswapV2: INVALID_SIGNATURE');
+        require(recoveredAddress != address(0) && recoveredAddress == owner, 'UniswapV2: INVALID_SIGNATURE');
         _approve(owner, spender, value);
     }
 }

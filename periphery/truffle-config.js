@@ -58,14 +58,13 @@ module.exports = {
     // },
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
-    ropsten: {
-    provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/8181f9251c6f4d248060f63236566acd`),
-    network_id: 3,       // Ropsten's id
+    kovan: {
+    provider: () => new HDWalletProvider(mnemonic, `https://kovan.infura.io/v3/8181f9251c6f4d248060f63236566acd`),
+    network_id: 42,       // Ropsten's id
     gas: 5500000,        // Ropsten has a lower block limit than mainnet
     confirmations: 2,    // # of confs to wait between deployments. (default: 0)
     timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
     skipDryRun: true,     // Skip dry run before migrations? (default: false for public nets )
-    from: "0x51b742979cc012d842c2ed783df682c8f4cadda7"
     },
     // Useful for private networks
     // private: {
