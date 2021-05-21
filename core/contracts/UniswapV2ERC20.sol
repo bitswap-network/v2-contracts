@@ -1,7 +1,7 @@
 pragma solidity =0.5.16;
 
-import 'https://github.com/Uniswap/uniswap-v2-core/blob/master/contracts/interfaces/IUniswapV2ERC20.sol';
-import 'Safemath.sol';
+import './interfaces/IUniswapV2ERC20.sol';
+import './libraries/SafeMath.sol';
 
 contract BitswapV2ERC20 is IUniswapV2ERC20 {
     using SafeMath for uint;

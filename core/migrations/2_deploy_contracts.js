@@ -1,6 +1,6 @@
 const Factory = artifacts.require("UniswapV2Factory.sol");
-const Token1 = artifacts.require("Token1.sol");
-const Token2 = artifacts.require("Token2.sol");
+const UniswapV2Pair = artifacts.require("UniswapV2Pair.sol");
+const wBCLT = artifacts.require("wBCLT.sol");
 
 module.exports = async function (deployer, network, addresses) {
   await deployer.deploy(Factory, addresses[0]);
